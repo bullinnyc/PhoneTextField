@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB5A60052B6F61D300D9DD47 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DB5A60042B6F61D300D9DD47 /* .gitignore */; };
+		DB5A60072B6F61F200D9DD47 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5A60062B6F61F200D9DD47 /* demo.png */; };
 		DB75F97E2B2F2DA500442A35 /* PhoneTextFieldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB75F97D2B2F2DA500442A35 /* PhoneTextFieldApp.swift */; };
 		DB75F9802B2F2DA500442A35 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB75F97F2B2F2DA500442A35 /* ContentView.swift */; };
 		DB75F9822B2F2DA700442A35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB75F9812B2F2DA700442A35 /* Assets.xcassets */; };
 		DB75F9862B2F2DA700442A35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB75F9852B2F2DA700442A35 /* Preview Assets.xcassets */; };
+		DB75F98D2B2F2DC000442A35 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB75F98C2B2F2DC000442A35 /* PhoneView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB5A60042B6F61D300D9DD47 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		DB5A60062B6F61F200D9DD47 /* demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo.png; sourceTree = "<group>"; };
 		DB75F97A2B2F2DA500442A35 /* PhoneTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB75F97D2B2F2DA500442A35 /* PhoneTextFieldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextFieldApp.swift; sourceTree = "<group>"; };
 		DB75F97F2B2F2DA500442A35 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DB75F9812B2F2DA700442A35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB75F9832B2F2DA700442A35 /* PhoneTextField.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhoneTextField.entitlements; sourceTree = "<group>"; };
 		DB75F9852B2F2DA700442A35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DB75F98C2B2F2DC000442A35 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,9 +39,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB0334F42B623F8D0063CF03 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB75F97F2B2F2DA500442A35 /* ContentView.swift */,
+				DB75F98C2B2F2DC000442A35 /* PhoneView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		DB75F9712B2F2DA500442A35 = {
 			isa = PBXGroup;
 			children = (
+				DB5A60062B6F61F200D9DD47 /* demo.png */,
+				DB5A60042B6F61D300D9DD47 /* .gitignore */,
 				DB75F97C2B2F2DA500442A35 /* PhoneTextField */,
 				DB75F97B2B2F2DA500442A35 /* Products */,
 			);
@@ -53,7 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				DB75F97D2B2F2DA500442A35 /* PhoneTextFieldApp.swift */,
-				DB75F97F2B2F2DA500442A35 /* ContentView.swift */,
+				DB0334F42B623F8D0063CF03 /* Views */,
 				DB75F9812B2F2DA700442A35 /* Assets.xcassets */,
 				DB75F9832B2F2DA700442A35 /* PhoneTextField.entitlements */,
 				DB75F9842B2F2DA700442A35 /* Preview Content */,
@@ -127,7 +144,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB5A60072B6F61F200D9DD47 /* demo.png in Resources */,
 				DB75F9862B2F2DA700442A35 /* Preview Assets.xcassets in Resources */,
+				DB5A60052B6F61D300D9DD47 /* .gitignore in Resources */,
 				DB75F9822B2F2DA700442A35 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB75F9802B2F2DA500442A35 /* ContentView.swift in Sources */,
+				DB75F98D2B2F2DC000442A35 /* PhoneView.swift in Sources */,
 				DB75F97E2B2F2DA500442A35 /* PhoneTextFieldApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
