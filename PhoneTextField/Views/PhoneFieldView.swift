@@ -1,5 +1,5 @@
 //
-//  PhoneView.swift
+//  PhoneFieldView.swift
 //  PhoneTextField
 //
 //  Created by Dmitry Kononchuk on 17.12.2023.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct PhoneView: View {
+struct PhoneFieldView: View {
     // MARK: - Property Wrappers
     
     @State private var text = ""
@@ -21,6 +21,7 @@ struct PhoneView: View {
     private let error: String?
     private let errorLineLimit: Int
     private let isFocused: Bool
+    private let keyboardType: UIKeyboardType
     private let submitLabel: SubmitLabel
     private let onSubmit: (() -> Void)?
     private let completion: (String) -> Void
@@ -41,6 +42,7 @@ struct PhoneView: View {
         error: String? = nil,
         errorLineLimit: Int = 2,
         isFocused: Bool,
+        keyboardType: UIKeyboardType = .numbersAndPunctuation,
         submitLabel: SubmitLabel = .return,
         onSubmit: (() -> Void)? = nil,
         completion: @escaping (String) -> Void
@@ -51,11 +53,12 @@ struct PhoneView: View {
         self.error = error
         self.errorLineLimit = errorLineLimit
         self.isFocused = isFocused
+        self.keyboardType = keyboardType
         self.submitLabel = submitLabel
         self.onSubmit = onSubmit
         self.completion = completion
         
-        _text = State(wrappedValue: getOnlyNumbers(from: text ?? ""))
+        _text = State(wrappedValue: text?.filteredNumber ?? "")
     }
     
     // MARK: - Body
@@ -85,12 +88,12 @@ struct PhoneView: View {
         .onReceive(text.publisher.collect()) { value in
             if isFocused {
                 text = formattedNumber(
-                    phone: text.isEmpty ? countryCode : String(value),
+                    text: text.isEmpty ? countryCode : String(value),
                     with: mask
                 )
             } else {
                 text = formattedNumber(
-                    phone: text == internationalCode ? "" : String(value),
+                    text: text == internationalCode ? "" : String(value),
                     with: mask
                 )
             }
@@ -99,10 +102,10 @@ struct PhoneView: View {
     
     // MARK: - Private Methods
     
-    private func formattedNumber(phone: String, with mask: String) -> String {
+    private func formattedNumber(text: String, with mask: String) -> String {
         var result = ""
         
-        let numbers = getOnlyNumbers(from: phone)
+        let numbers = text.filteredNumber
         var index = numbers.startIndex
         
         for character in mask where index < numbers.endIndex {
@@ -117,17 +120,10 @@ struct PhoneView: View {
         return result
     }
     
-    private func getOnlyNumbers(from text: String) -> String {
-        text.replacingOccurrences(
-            of: "[^0-9]", with: "",
-            options: .regularExpression
-        )
-    }
-    
     private func phoneChanged(to newValue: String) {
         guard newValue.count <= mask.count else { return }
         
-        let numbers = getOnlyNumbers(from: newValue)
+        let numbers = newValue.filteredNumber
         
         if numbers == countryCode {
             completion("")
@@ -139,7 +135,7 @@ struct PhoneView: View {
 
 // MARK: - Ext. Configure views
 
-extension PhoneView {
+extension PhoneFieldView {
     private var textField: some View {
         TextField(
             placeholder,
@@ -148,9 +144,9 @@ extension PhoneView {
                 : $text.onChange(phoneChanged)
         )
         .textFieldStyle(.roundedBorder)
-        .onSubmit {
-            onSubmit?()
-        }
+        .keyboardType(keyboardType)
+        .submitLabel(submitLabel)
+        .onSubmit { onSubmit?() }
     }
 }
 
@@ -168,10 +164,18 @@ private extension Binding {
     }
 }
 
+// MARK: - Ext. String
+
+private extension String {
+    var filteredNumber: String {
+        filter { "0123456789".contains($0) }
+    }
+}
+
 // MARK: - Preview
 
 #Preview {
-    PhoneView(
+    PhoneFieldView(
         placeholder: "Phone",
         text: "",
         title: "Phone",

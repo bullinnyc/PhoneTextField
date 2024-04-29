@@ -13,7 +13,7 @@
 		DB75F9802B2F2DA500442A35 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB75F97F2B2F2DA500442A35 /* ContentView.swift */; };
 		DB75F9822B2F2DA700442A35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB75F9812B2F2DA700442A35 /* Assets.xcassets */; };
 		DB75F9862B2F2DA700442A35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB75F9852B2F2DA700442A35 /* Preview Assets.xcassets */; };
-		DB75F98D2B2F2DC000442A35 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB75F98C2B2F2DC000442A35 /* PhoneView.swift */; };
+		DB75F98D2B2F2DC000442A35 /* PhoneFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB75F98C2B2F2DC000442A35 /* PhoneFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		DB75F9812B2F2DA700442A35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB75F9832B2F2DA700442A35 /* PhoneTextField.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhoneTextField.entitlements; sourceTree = "<group>"; };
 		DB75F9852B2F2DA700442A35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DB75F98C2B2F2DC000442A35 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
+		DB75F98C2B2F2DC000442A35 /* PhoneFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				DB75F97F2B2F2DA500442A35 /* ContentView.swift */,
-				DB75F98C2B2F2DC000442A35 /* PhoneView.swift */,
+				DB75F98C2B2F2DC000442A35 /* PhoneFieldView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,7 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB75F9802B2F2DA500442A35 /* ContentView.swift in Sources */,
-				DB75F98D2B2F2DC000442A35 /* PhoneView.swift in Sources */,
+				DB75F98D2B2F2DC000442A35 /* PhoneFieldView.swift in Sources */,
 				DB75F97E2B2F2DA500442A35 /* PhoneTextFieldApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

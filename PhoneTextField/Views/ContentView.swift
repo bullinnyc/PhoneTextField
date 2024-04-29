@@ -31,7 +31,7 @@ struct ContentView: View {
                 .ignoresSafeArea()
             
             VStack {
-                PhoneView(
+                PhoneFieldView(
                     placeholder: "Phone",
                     title: "Phone",
                     isFocused: focusedField == .phone,
@@ -41,7 +41,6 @@ struct ContentView: View {
                     }
                 )
                 .padding(.bottom, 34)
-                .keyboardType(.numbersAndPunctuation)
                 .focused($focusedField, equals: .phone)
                 
                 TextField("Name", text: $name)
